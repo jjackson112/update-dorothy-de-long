@@ -12,8 +12,6 @@
 
     <!--Tailwind CDN-->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script src="app.js" defer></script>
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,34 +25,47 @@
 </head>
 
 <body class="homepage">
-    <header class="header-wrapper">
-        <nav class="logo-hamburger-container">
-            <div class="logo-container">
+    <header class="header-wrapper bg-no-repeat bg-top">
+        <nav class="flex items-center justify-between px-6 py-4" id="logo-hamburger-container">
+            <div class="flex items-center space-x-3" id="logo-container">
                 <figure>
-                    <img src="img/improved-logo.png">
+                    <img src="img/improved-logo-1.png" alt="logo">
                 </figure>
-                <p class="logo-caption" id="active">Dorothy de Long</p>
+                <p class="text-md text-sky-400 font-semibold" id="logo-caption">Dorothy de Long</p>
             </div>
-            <div class="hamburger-menu">
+            <div class="hidden md:flex space-x-6 uppercase" id="hamburger-menu">
                 <ul class="menu-list">
-                    <li><a class="menu-item" href="about.html">About</a></li>
-                    <li><a class="menu-item" href="portfolio.html">Portfolio</a></li>
-                    <li><a class="menu-item" href="blog.html">Blog</a></li>
-                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 p-5" href="about.html">About</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 p-5" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 p-5" href="blog.html">Blog</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 p-5" href="contact.html">Contact</a></li>
                 </ul>
             </div>
-<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <!-- Mobile Hamburger -->
+            <button class="md:hidden text-2xl text-sky-400" id="mobile-btn">
                 <i class="fa fa-bars"></i>
-            </a>    
+            </button>
+
+            <!-- MOBILE MENU: starts hidden -->
+            <div id="mobile-menu" class="hidden max-h-0 overflow-hidden transition-all duration-300 flex-col bg-white px-6 py-4 space-y-4 md:hidden shadow">
+                <ul>
+                    <li><a class="block py-2" href="index.html">Home</a></li>
+                    <li><a class="block py-2" href="about.html">About</a></li>
+                    <li><a class="block py-2" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="block py-2" href="blog.html">Blog</a></li>
+                    <li><a class="block py-2" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </nav>
+
         <div class="hero-text">
-            <h1 id="tagline">"I capture the realism behind feminism, no filter."</h1>
+            <h1 id="tagline" class="flex justify-center text-white">"I capture the realism behind feminism, no filter."</h1>
         </div>
         <div class="hero-caption">
             <p class="first-caption">Smile, San Francisco<br> California- August 4, 2017</p>
         </div>
     </header>
+
     <main>
         <section class="artist-wrapper" id="about">
             <h2 class="artist-header">Artist's Statement</h2>
@@ -143,5 +154,6 @@
             <p>Copyright | Dorothy de Long</p>
         </div>
     </footer>
+    <script src="app.js" defer></script>
 </body>
 </html>
