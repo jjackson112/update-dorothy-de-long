@@ -10,8 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // Animate height
         if (menu.classList.contains("hidden")) {
             menu.style.maxHeight = "0";
+            menu.style.opacity = "0";
+            menu.style.transform = "translateY(-10px)";
         } else {
             menu.style.maxHeight = menu.scrollHeight + "px";
+            menu.style.opacity = "1";
+            menu.style.transform = "translateY(0)";
         }
     });
 });

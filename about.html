@@ -25,16 +25,16 @@
 
 
 <body class="about-page">
-    <header class="header-wrapper bg-no-repeat bg-top">
-        <nav class="flex items-center justify-between px-6 py-4">
+        <header>
+        <nav class="flex items-center justify-between px-6 py-4 bg-black">
             <div class="flex items-center space-x-3">
                 <figure>
                     <img src="img/improved-logo-1.png" alt="logo">
                 </figure>
                 <p class="text-md text-sky-400 font-semibold">Dorothy de Long</p>
             </div>
-            <div class="hidden md:flex space-x-6 uppercase">
-                <ul class="menu-list">
+            <div class="hidden md:flex uppercase">
+                <ul class="flex space-x-8">
                     <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="about.html">About</a></li>
                     <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="portfolio.html">Portfolio</a></li>
                     <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="blog.html">Blog</a></li>
@@ -45,22 +45,17 @@
             <button class="md:hidden text-2xl text-sky-400" id="mobile-btn">
                 <i class="fa fa-bars"></i>
             </button>
-
-            <!-- MOBILE MENU: starts hidden -->
-            <div id="mobile-menu" class="hidden max-h-0 overflow-hidden transition-all duration-300 flex-col bg-white px-6 py-4 space-y-4 md:hidden shadow">
+        </nav>
+        <!-- MOBILE MENU: starts hidden -->
+            <div id="mobile-menu" class="hidden max-h-0 overflow-hidden transition-all duration-300 ease-out flex-col bg-white px-6 py-4 space-y-4 shadow md:hidden opacity-0 transform -translate-y-2 w-56 rounded-lg absolute right-6 top-16">
                 <ul>
-                    <li><a class="block py-2" href="/index.html">Home</a></li>
-                    <li><a class="block py-2" href="/about.html">About</a></li>
-                    <li><a class="block py-2" href="/portfolio.html">Portfolio</a></li>
-                    <li><a class="block py-2" href="/blog.html">Blog</a></li>
-                    <li><a class="block py-2" href="#contact">Contact</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="index.html">Home</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="about.html">About</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="blog.html">Blog</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="#contact">Contact</a></li>
                 </ul>
             </div>
-        </nav>
-
-        <div class="flex flex-column justify-center p-10">
-            <h1 class="text-2xl text-neutral-50">"I capture the realism behind feminism, no filter."</h1>
-        </div>
     </header>
 
     <main>
@@ -72,7 +67,6 @@
                 </figure>
                 <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
                     <p class="leading-relaxed md:leading-loose text-sky-900">My work focuses on candid photographs taken on location at events for women's rights, places where women are owning their space, and fleeting encounters on the streets. My work engulfs the viewer in real moments of strength, vulnerability, and solidarity.</p><br>
-                    <a class="text-sky-900 hover:text-sky-400 font-semibold" href="about.html">Read more...</a>
                 </div>
             </div>
         </section>
