@@ -19,3 +19,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+function getExcerpt(text, limit = 120) {
+    if (text.length <= limit) {
+        return text;
+    }
+
+    // Cut the string at the limit
+    let cut = text.substring(0, limit);
+
+    // Roll back to the last space so we don’t cut mid-word
+    const lastSpace = cut.lastIndexOf(" ");
+
+    if (lastSpace > -1) {
+        cut = cut.substring(0, lastSpace);
+    }
+
+    return cut.trim() + "...";
+}
+
