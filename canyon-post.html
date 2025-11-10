@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Dorothy de Long</title>
+    <link rel="icon" type="image/x-icon" href="img/Logo.svg">
+    
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!--Tailwind CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="config.js"></script>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+
+<body class="blog-post">
+    <header>
+        <nav class="flex items-center justify-between px-6 py-4 bg-black">
+            <div class="flex items-center space-x-3">
+                <figure>
+                    <img src="img/improved-logo-1.png" alt="logo">
+                </figure>
+                <p class="text-md text-sky-400 font-semibold">Dorothy de Long</p>
+            </div>
+            <div class="hidden md:flex uppercase">
+                <ul class="flex space-x-8">
+                    <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="about.html">About</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="blog.html">Blog</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Mobile Hamburger -->
+            <button class="md:hidden text-2xl text-sky-400" id="mobile-btn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+        <!-- MOBILE MENU: starts hidden -->
+            <div id="mobile-menu" class="hidden max-h-0 overflow-hidden transition-all duration-300 ease-out flex-col bg-white px-6 py-4 space-y-4 shadow md:hidden opacity-0 transform -translate-y-2 w-56 rounded-lg absolute right-6 top-16">
+                <ul>
+                    <li><a class="block py-2 hover:text-sky-300" href="index.html">Home</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="about.html">About</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="blog.html">Blog</a></li>
+                    <li><a class="block py-2 hover:text-sky-300" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+    </header>
+
+    <main>
+        <section>
+            <article class="max-w-3xl mx-auto px-6 py-12">
+                <h1 class="text-4xl font-bold mb-4 text-sky-400">Antelope Canyon</h1>
+                <p class="text-gray-500 mb-8">Posted on June 15, 2025</p>
+                <img src="img/madhu-shesharam-EVZxXuOEk3w-unsplash.jpg" alt="Post Image" class="w-full h-64 object-cover mb-6 rounded-lg">
+                <div class="prose max-w-none">
+                    <p>This is where the blog content goes. Paragraphs, images, quotes, code snippets—anything your post needs.</p>
+                    <p>Keep things readable and well-spaced. Tailwind’s <code>prose</code> class helps with that.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer id="contact" class="text-center bg-black py-10">
+        <h2 class="text-lg text-sky-400 p-5">Connect with Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-3xl mx-auto">
+            <div class="space-y-2">
+                <p class="text-white hover:text-lime-200">555-555-5555</p>
+                <p class="text-white hover:text-lime-200">dorothydelong@gallery.com</p>
+            </div>
+            <div>
+                <div class="flex flex-row justify-center space-x-4 pt-5">
+                    <a href="https://www.facebook.com/" target="_blank" class="w-10 h-10 bg-white hover:bg-lime-200 rounded-full flex items-center justify-center"><i class="fab fa-facebook text-sky-950"></i></a>
+                    <a href="https://twitter.com/" target="_blank" class="w-10 h-10 bg-white hover:bg-lime-200 rounded-full flex items-center justify-center"><i class="fab fa-twitter text-sky-950"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="w-10 h-10 bg-white hover:bg-lime-200 rounded-full flex items-center justify-center"><i class="fab fa-instagram text-sky-950"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center text-semibold p-10">
+            <p class="text-sky-400">Copyright © | Dorothy de Long</p>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
