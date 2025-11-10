@@ -1,9 +1,17 @@
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-function myFunction() {
-    const showMenuItems = document.getElement(".menu-list");
-    if (showMenuItems.style.display === "block") {
-      showMenuItems.style.display = "none";
-    } else {
-      showMenuItems.style.display = "block";
-    }
-  }
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("mobile-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+        // Toggle visibility
+        menu.classList.toggle("hidden");
+
+        // Animate height
+        if (menu.classList.contains("hidden")) {
+            menu.style.maxHeight = "0";
+        } else {
+            menu.style.maxHeight = menu.scrollHeight + "px";
+        }
+    });
+});
