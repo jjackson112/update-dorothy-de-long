@@ -38,3 +38,7 @@ function getExcerpt(text, limit = 120) {
     return cut.trim() + "...";
 }
 
+document.querySelectorAll(".excerpt").forEach(el => {
+    const fullText = el.textContent;
+    el.textContent = getExcerpt(fullText, 100); // Adjust character limit
+});
