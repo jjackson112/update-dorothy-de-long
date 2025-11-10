@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio | Dorothy de Long</title>
+    <link rel="icon" type="image/x-icon" href="img/Logo.svg">
+    
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!--Tailwind CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="config.js"></script>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+
+<body class="about-page">
+    <header class="header-wrapper bg-no-repeat bg-top">
+        <nav class="flex items-center justify-between px-6 py-4">
+            <div class="flex items-center space-x-3">
+                <figure>
+                    <img src="img/improved-logo-1.png" alt="logo">
+                </figure>
+                <p class="text-md text-sky-400 font-semibold">Dorothy de Long</p>
+            </div>
+            <div class="hidden md:flex space-x-6 uppercase">
+                <ul class="menu-list">
+                    <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="about.html">About</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="blog.html">Blog</a></li>
+                    <li><a class="text-sky-400 hover:text-sky-300 font-semibold p-5" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Mobile Hamburger -->
+            <button class="md:hidden text-2xl text-sky-400" id="mobile-btn">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- MOBILE MENU: starts hidden -->
+            <div id="mobile-menu" class="hidden max-h-0 overflow-hidden transition-all duration-300 flex-col bg-white px-6 py-4 space-y-4 md:hidden shadow">
+                <ul>
+                    <li><a class="block py-2" href="/index.html">Home</a></li>
+                    <li><a class="block py-2" href="/about.html">About</a></li>
+                    <li><a class="block py-2" href="/portfolio.html">Portfolio</a></li>
+                    <li><a class="block py-2" href="/blog.html">Blog</a></li>
+                    <li><a class="block py-2" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="flex flex-column justify-center p-10">
+            <h1 class="text-2xl text-neutral-50">"I capture the realism behind feminism, no filter."</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="text-center bg-white pb-16 px-6">
+            <h2 class="text-2xl text-sky-950 p-10">Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-6xl mx-auto">
+                <figure class="flex flex-col">
+                    <img class="w-full h-64 object-cover" src="img/black-girl-magic.png" alt="black girl smiling at camera">
+                    <figcaption class="mt-4 text-sky-950 text-md leading-tight">Black Girl Magic<br> Houston, TX.<br> January 17, 2018</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img class="w-full h-64 object-cover" src="img/flex.png">
+                    <figcaption class="mt-4 text-sky-950 text-md leading-tight">Flex<br> Madison, WI.<br> July 24, 2020</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img class="w-full h-64 object-cover" src="img/moment.png">
+                    <figcaption class="mt-4 text-sky-950 text-md leading-tight">Moment, FemRockFest<br> Austin, Texas<br> July 17, 2021</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img class="w-full h-64 object-cover" src="img/flag.png">
+                    <figcaption class="mt-4 text-sky-950 text-md leading-tight">Flag LGBTQIA March<br> in Washington, DC<br> November 12, 2022</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img class="w-full h-64 object-cover" src="img/father.png">
+                    <figcaption class="mt-4 text-sky-950 text-md leading-tight">Father<br> Denver, Colorado<br> June 25, 2024</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img class="w-full h-64 object-cover" src="img/haircut.png">
+                    <figcaption class="mt-4 text-sky-950 text-md leading-tight">Haircut<br> New York City<br> March 31, 2025</figcaption>
+                </figure>
+            </div>
+            <div>
+                <a href="portfolio.html" 
+                class="inline-block bg-sky-900 hover:bg-sky-400 focus:bg-sky-700 focus:outline-none focus:ring-4 focus:ring-sky-300 text-white font-bold py-2 px-6 rounded-full transition-colors m-5">
+                Recent Projects
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer id="contact" class="text-center bg-black py-10">
+        <h2 class="text-lg text-sky-400 p-5">Connect with Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-3xl mx-auto">
+            <div class="space-y-2">
+                <p class="text-white hover:text-lime-200">555-555-5555</p>
+                <p class="text-white hover:text-lime-200">dorothydelong@gallery.com</p>
+            </div>
+            <div>
+                <div class="flex flex-row justify-center space-x-4 pt-5">
+                    <a href="https://www.facebook.com/" target="_blank" class="w-10 h-10 bg-white hover:bg-lime-200 rounded-full flex items-center justify-center"><i class="fab fa-facebook text-sky-950"></i></a>
+                    <a href="https://twitter.com/" target="_blank" class="w-10 h-10 bg-white hover:bg-lime-200 rounded-full flex items-center justify-center"><i class="fab fa-twitter text-sky-950"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="w-10 h-10 bg-white hover:bg-lime-200 rounded-full flex items-center justify-center"><i class="fab fa-instagram text-sky-950"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center text-semibold p-10">
+            <p class="text-sky-400">Copyright © | Dorothy de Long</p>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
