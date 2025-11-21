@@ -1,44 +1,71 @@
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("mobile-btn");
-    const menu = document.getElementById("mobile-menu");
+<?php
+// Enqueue CSS and register menu if you want an editable menu in WP admin with wp_nav_menu()
+    function dorothy_enqueue_styles() {
+        // Tailwind CDN
+        wp_enqueue_script(
+            'tailwind',
+            'https://cdn.tailwindcss.com',
+            array(),
+            null,
+            false
+        );
 
-    btn.addEventListener("click", () => {
-        // Toggle visibility
-        menu.classList.toggle("hidden");
-
-        // Animate height
-        if (menu.classList.contains("hidden")) {
-            menu.style.maxHeight = "0";
-            menu.style.opacity = "0";
-            menu.style.transform = "translateY(-10px)";
-        } else {
-            menu.style.maxHeight = menu.scrollHeight + "px";
-            menu.style.opacity = "1";
-            menu.style.transform = "translateY(0)";
-        }
-    });
-});
-
-function getExcerpt(text, limit = 120) {
-    if (text.length <= limit) {
-        return text;
+        // Optional: Your own CSS overrides (should one be added later)
+        wp_enqueue_style(
+            'dorothy-style',
+            get_template_directory_uri() . '/assets/css/style.css',
+            array(),
+            '1.0'
+        );
     }
+    add_action('wp_enqueue_scripts', 'dorothy_enqueue_styles');
 
-    // Cut the string at the limit
-    let cut = text.substring(0, limit);
-
-    // Roll back to the last space so we don’t cut mid-word
-    const lastSpace = cut.lastIndexOf(" ");
-
-    if (lastSpace > -1) {
-        cut = cut.substring(0, lastSpace);
+// add support for featured images
+    function dorothy_theme_setup() {
+        add_theme_support('post-thumbnails');
     }
+    add_action('after_setup_theme', 'dorothy_theme_setup');
 
-    return cut.trim() + "...";
+// override WordPress default with Tailwind styles for images
+    function add_tailwind_classes_to_post_images($content) {
+        
+        $content = preg_replace(
+            '/<img(.*?)class="(.*?)"(.*?)>/',
+            '<img$1class="$2 w-full h-64 object-cover rounded-lg"$3>',
+            $content
+        );
+
+        // If the image does NOT have a class attribute → add Tailwind classes
+        $content = preg_replace(
+            '/<img(?!.*class)(.*?)>/',
+            '<img class="w-full h-64 object-cover rounded-lg"$1>',
+            $content
+        );
+
+        return $content;
+    }
+    add_filter('the_content', 'add_tailwind_classes_to_post_images');
+
+
+// Create custom post type
+    function create_custom_post_types() {
+        register_post_type('events',
+        array(
+            'labels' => array(
+                'name' => __( 'Events' ),
+                'singular_name' => __( 'Event' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'events' ),
+            'supports'    => array('title', 'editor', 'thumbnail', 'excerpt'),
+        ));
+    }
+    add_action ( 'init', 'create_custom_post_types' );
+
+// Enqueue Font Awesome icons
+
+function enqueue_load_fa() {
+    wp_enqueue_style('load-fa', 'https://use.fontawesome.com/releases/7.0.1/css/all.css');
 }
-
-document.querySelectorAll(".excerpt").forEach(el => {
-    const fullText = el.textContent;
-    el.textContent = getExcerpt(fullText, 100); // Adjust character limit
-});
+add_action( 'wp_enqueue_scripts', 'enqueue_load_fa' );
