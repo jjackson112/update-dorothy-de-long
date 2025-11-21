@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const btn = document.getElementById("mobile-btn");
     const menu = document.getElementById("mobile-menu");
+    const closeBtn = document.getElementById('mobileMenuClose');
 
     btn.addEventListener("click", () => {
         // Toggle visibility
@@ -18,6 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.style.transform = "translateY(0)";
         }
     });
+    
+    // close menu
+    closeBtn.addEventListener('click', () => {
+        menu.classList.add('max-h-0', 'opacity-0', '-translate-y-2');
+        
+        // hide fully after animation is over
+        setTimeout(() => {
+            menu.classList.add('hidden');
+        }, 300);
+    });
+
 });
 
 function getExcerpt(text, limit = 120) {
